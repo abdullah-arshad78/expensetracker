@@ -16,6 +16,7 @@ body{
     min-height: 100vh;
     margin: 0;
     font-family: var(--default-font-family);
+    position: relative;
 }
 .container{
     margin: 30px auto;
@@ -135,4 +136,25 @@ input:focus{
  .valid{
      background-color: #544179  ;
      cursor: pointer;
+ }
+ .popup{
+     position: fixed;
+     bottom: 0;
+     left: 50%;
+     transform: translate(-50%,100%);
+     width: 300px;
+     /* margin-bottom: -58px; */
+     background-color: rgba(81, 52, 114, 0.7);
+     border-top-right-radius: 5px;
+     border-top-left-radius: 5px;
+     text-align: center;
+     color: #F3F1F5;
+     transition: transform .3s ease-in-out;
+ }
+ .popup h3{
+     border:none;
+     margin: 20px 0 5px;
+ }
+ .show{
+    transform: translate(-50%,-0);
  }

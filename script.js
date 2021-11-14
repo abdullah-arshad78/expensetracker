@@ -5,6 +5,7 @@ const list = document.getElementById("list");
 const form = document.getElementById("form");
 const text = document.getElementById("text");
 const amount = document.getElementById("amount");
+const popup = document.querySelector(".popup");
 
 
 
@@ -67,7 +68,10 @@ function generateId(){
 //Add items 
 const addItems = ()=>{
     if (text.value.trim()=="" || amount.value.trim()==""){
-
+       popup.classList.add("show");
+        setTimeout(()=>{
+           popup.classList.remove("show"); 
+        },3000)
     }else{ 
         const transObj = {id:generateId(),text:text.value, amount:amount.value};
         transactions.push(transObj)
@@ -96,6 +100,7 @@ function updateLocalStorage(){
 //init app
 function init(){
     list.innerHTML="";
+    popup.classList.remove("show");
     transactions.forEach(addTransactionDOM);
     updateIncomes()
 }
