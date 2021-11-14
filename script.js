@@ -8,7 +8,6 @@ const amount = document.getElementById("amount");
 const popup = document.querySelector(".popup");
 
 
-
 // const dummyTransactions = [
 //     { id:1 , text:"Flower", amount:-20},
 //     { id:2 , text:"Salary", amount:300},
@@ -66,10 +65,11 @@ function generateId(){
 }
 
 //Add items 
-const addItems = ()=>{
+const addItems = async ()=>{
     if (text.value.trim()=="" || amount.value.trim()==""){
-       popup.classList.add("show");
-        setTimeout(()=>{
+            popup.classList.add("show");
+      
+        await setTimeout(()=>{
            popup.classList.remove("show"); 
         },3000)
     }else{ 
@@ -104,8 +104,8 @@ function init(){
     transactions.forEach(addTransactionDOM);
     updateIncomes()
 }
-init()
 
+init()
 
 form.addEventListener("submit",(e)=>{
     e.preventDefault();
